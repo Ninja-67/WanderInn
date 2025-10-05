@@ -32,10 +32,6 @@ flowchart LR
   Service -->|Cache| Caffeine[(Caffeine)]
   Stripe((Stripe)) -->|Webhooks| Controller
 ```
-
-## Configuration
-
-Create `src/main/resources/application-example.properties`
 ### Domain Model (Mermaid)
 
 ```mermaid
@@ -64,6 +60,9 @@ erDiagram
   }
 ```
 
+## Configuration
+
+Create `src/main/resources/application-example.properties`
 ```properties
 # --- Server ---
 server.port=8080
