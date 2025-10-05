@@ -1,6 +1,6 @@
 # WanderInn
 
-Production-ready backend for a hotel reservation system built with **Spring Boot 3** and **PostgreSQL/JPA**. It powers **search, booking, payments, and admin**. Dynamic pricing uses **Strategy + Decorator**; hot paths are accelerated with **Caffeine** caching (measured **~58% latency reduction: 19 ms → 8 ms**).
+Production-ready backend for a hotel reservation system built with **Spring Boot 3** and **PostgreSQL/JPA**. It powers **search, booking, payments, and admin**. Dynamic pricing uses **Strategy + Decorator**; hot paths are accelerated with **Caffeine** caching (measured **~58% latency reduction**).
 
 ![Java](https://img.shields.io/badge/Java-21-007396?logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?logo=springboot)
@@ -11,7 +11,7 @@ Production-ready backend for a hotel reservation system built with **Spring Boot
 - Search & booking across **10k+ listings**
 - **JWT** auth (access/refresh) with role-based authorization
 - **Dynamic pricing** via Strategy + Decorator (occupancy, seasonality/holiday, surge, promos)
-- **Stripe Checkout** + signature-verified, **idempotent** webhook reconciliation
+- **Stripe Checkout** + signature-verified, webhooks
 - **Caffeine caching** (per-instance) + min-price precompute → **~58% faster search**
 - OpenAPI/Swagger docs, global exception mapping
 
@@ -108,21 +108,11 @@ spring.datasource.password=change_me
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.open-in-view=false
 spring.jpa.show-sql=false
-spring.jpa.properties.hibernate.jdbc.time_zone=UTC
 
-# --- Swagger / OpenAPI ---
-springdoc.api-docs.path=/v3/api-docs
-springdoc.swagger-ui.path=/swagger-ui.html
-
-# --- Caching (Caffeine) ---
-spring.cache.type=caffeine
-spring.cache.cache-names=inventoryByRoom,inventorySearch
-spring.cache.caffeine.spec=maximumSize=10000,expireAfterWrite=10m,recordStats
+server.servlet.context-path=/api/v1
 
 # --- Security (JWT) ---
 app.jwt.secret=CHANGE_ME
-app.jwt.access-token-ttl=PT15M
-app.jwt.refresh-token-ttl=PT7D
 
 # --- Stripe ---
 stripe.secretKey=sk_test_xxx
