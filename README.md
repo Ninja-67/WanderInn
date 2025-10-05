@@ -12,7 +12,7 @@ Production-ready backend for a hotel reservation system built with **Spring Boot
 - **JWT** auth (access/refresh) with role-based authorization
 - **Dynamic pricing** via Strategy + Decorator (occupancy, seasonality/holiday, surge, promos)
 - **Stripe Checkout** + signature-verified, webhooks
-- **Caffeine caching** **~58% faster search**
+- **Caffeine caching** with **~58% faster search**
 - OpenAPI/Swagger docs, global exception mapping
 
 ---
