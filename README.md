@@ -33,40 +33,6 @@ flowchart LR
   Stripe((Stripe)) -->|Webhooks| Controller
 ```
 
-### (Optional) ER diagram (Mermaid)
-```markdown
-### Domain Model
-
-```mermaid
-erDiagram
-  HOTEL ||--o{ ROOM : has
-  ROOM  ||--o{ INVENTORY : has
-
-  HOTEL {
-    UUID id
-    string name
-    string city
-  }
-  ROOM {
-    UUID id
-    int totalCount
-    double basePrice
-  }
-  INVENTORY {
-    UUID id
-    date date
-    int totalCount
-    int bookedCount
-    int reservedCount
-    double price
-    bool closed
-  }
-```
-
-
-
-
-
 ## Configuration
 
 Create `src/main/resources/application-example.properties`
