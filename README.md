@@ -64,10 +64,11 @@ erDiagram
 ```
 
 
-Configuration
+## Configuration
 
-Create src/main/resources/application-example.properties:
+Create `src/main/resources/application-example.properties`
 
+```properties
 # --- Server ---
 server.port=8080
 
@@ -102,3 +103,4 @@ stripe.webhookSecret=whsec_xxx
 
 # --- CORS (comma-separated) ---
 app.cors.allowed-origins=http://localhost:3000
+
