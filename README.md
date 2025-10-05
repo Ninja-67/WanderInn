@@ -67,6 +67,33 @@ erDiagram
 ## Configuration
 
 Create `src/main/resources/application-example.properties`
+### Domain Model (Mermaid)
+
+```mermaid
+erDiagram
+  HOTEL ||--o{ ROOM : has
+  ROOM  ||--o{ INVENTORY : has
+
+  HOTEL {
+    UUID id
+    string name
+    string city
+  }
+  ROOM {
+    UUID id
+    int totalCount
+    double basePrice
+  }
+  INVENTORY {
+    UUID id
+    date date
+    int totalCount
+    int bookedCount
+    int reservedCount
+    double price
+    bool closed
+  }
+```
 
 ```properties
 # --- Server ---
