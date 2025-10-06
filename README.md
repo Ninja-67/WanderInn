@@ -17,6 +17,8 @@ Production-ready backend for a hotel reservation system built with **Spring Boot
 
 ---
 
+For API docs : https://ninja-67.github.io/WanderInn/
+
 ## Architecture (at a glance)
 - **Controllers** → REST endpoints, validation, global error mapping  
 - **Services** → search, booking, pricing, payments  
