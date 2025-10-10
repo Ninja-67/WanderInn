@@ -34,7 +34,7 @@ flowchart LR
   Service -->|Cache| Caffeine[(Caffeine)]
   Stripe((Stripe)) -->|Webhooks| Controller
 ```
-### Domain Model (Mermaid)
+### ER Diagram
 
 ![Entity-Relational model](./image.png)
 
