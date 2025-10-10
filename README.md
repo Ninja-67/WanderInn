@@ -36,31 +36,7 @@ flowchart LR
 ```
 ### Domain Model (Mermaid)
 
-```mermaid
-erDiagram
-  HOTEL ||--o{ ROOM : has
-  ROOM  ||--o{ INVENTORY : has
-
-  HOTEL {
-    UUID id
-    string name
-    string city
-  }
-  ROOM {
-    UUID id
-    int totalCount
-    double basePrice
-  }
-  INVENTORY {
-    UUID id
-    date date
-    int totalCount
-    int bookedCount
-    int reservedCount
-    double price
-    bool closed
-  }
-```
+![Entity-Relational model](./image.png)
 
 ## Configuration
 
